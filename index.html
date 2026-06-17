@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute To-Do & Productivity Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- SVG Icon & Character Symbols Library -->
+    <svg style="display: none;">
+        <!-- Default Cute Green Dinosaur (Buddy) -->
+        <g id="dino-default">
+            <!-- Tail -->
+            <path d="M 25,75 Q 5,75 5,55 Q 5,35 20,40 Q 25,45 25,55 Z" fill="#60D394" />
+            <path d="M 10,60 L 5,55 L 8,45 Z" fill="#FF9F1C" /> <!-- Tail spikes -->
+            <!-- Feet -->
+            <ellipse cx="35" cy="85" rx="8" ry="6" fill="#4CB97F" />
+            <ellipse cx="65" cy="85" rx="8" ry="6" fill="#4CB97F" />
+            <!-- Body -->
+            <path d="M 25,55 Q 25,90 50,90 Q 75,90 75,55 Q 75,30 50,30 Q 25,30 25,55 Z" fill="#60D394" />
+            <!-- Belly -->
+            <ellipse cx="50" cy="62" rx="16" ry="20" fill="#FFF3B0" />
+            <!-- Back Spikes -->
+            <path d="M 28,38 L 22,32 L 30,28 Z" fill="#FF9F1C" />
+            <path d="M 38,28 L 36,20 L 44,20 Z" fill="#FF9F1C" />
+            <path d="M 52,26 L 54,16 L 60,20 Z" fill="#FF9F1C" />
+            <path d="M 68,34 L 74,28 L 72,38 Z" fill="#FF9F1C" />
+            <!-- Arms -->
+            <ellipse class="dino-default-arm-left" cx="28" cy="58" rx="5" ry="8" fill="#4CB97F" transform="rotate(-15 28 58)" />
+            <ellipse class="dino-default-arm-right" cx="72" cy="58" rx="5" ry="8" fill="#4CB97F" transform="rotate(15 72 58)" />
+            <!-- Head -->
+            <path d="M 30,35 Q 30,10 50,10 Q 70,10 70,35 Q 70,45 50,45 Q 30,45 30,35 Z" fill="#60D394" />
+            <!-- Blush -->
+            <ellipse cx="38" cy="35" rx="5" ry="3" fill="#FF9B9B" opacity="0.8" />
+            <ellipse cx="62" cy="35" rx="5" ry="3" fill="#FF9B9B" opacity="0.8" />
+            <!-- Eyes -->
+            <g class="dino-default-eye-left" transform-origin="42px 28px">
+                <circle cx="42" cy="28" r="5" fill="#2E2D4D" />
+                <circle cx="43" cy="27" r="1.8" fill="#FFFFFF" />
+            </g>
+            <g class="dino-default-eye-right" transform-origin="58px 28px">
+                <circle cx="58" cy="28" r="5" fill="#2E2D4D" />
+                <circle cx="59" cy="27" r="1.8" fill="#FFFFFF" />
+            </g>
+            <!-- Smile -->
+            <path d="M 47,36 Q 50,40 53,36" stroke="#2E2D4D" stroke-width="2.5" stroke-linecap="round" fill="none" />
+        </g>
+
+        <!-- Blue Dinosaur -->
+        <g id="dino-blue">
+            <path d="M 25,75 Q 5,75 5,55 Q 5,35 20,40 Q 25,45 25,55 Z" fill="#4EA8DE" />
+            <path d="M 10,60 L 5,55 L 8,45 Z" fill="#FFD166" />
+            <ellipse cx="35" cy="85" rx="8" ry="5" fill="#0077B6" />
+            <ellipse cx="65" cy="85" rx="8" ry="5" fill="#0077B6" />
+            <rect x="30" y="35" width="40" height="45" rx="20" fill="#4EA8DE" />
+            <ellipse cx="50" cy="65" rx="15" ry="20" fill="#FFF3B0" />
+            <path d="M 38,28 L 36,20 L 44,20 Z" fill="#FFD166" />
+            <path d="M 52,26 L 54,16 L 60,20 Z" fill="#FFD166" />
+            <path d="M 68,34 L 74,28 L 72,38 Z" fill="#FFD166" />
+            <ellipse class="dino-default-arm-left" cx="28" cy="58" rx="5" ry="8" fill="#0077B6" transform="rotate(-15 28 58)" />
+            <ellipse class="dino-default-arm-right" cx="72" cy="58" rx="5" ry="8" fill="#0077B6" transform="rotate(15 72 58)" />
+            <path d="M 30,35 Q 30,10 50,10 Q 70,10 70,35 Q 70,45 50,45 Q 30,45 30,35 Z" fill="#4EA8DE" />
+            <ellipse cx="38" cy="35" rx="5" ry="3" fill="#FF9B9B" opacity="0.8" />
+            <ellipse cx="62" cy="35" rx="5" ry="3" fill="#FF9B9B" opacity="0.8" />
+            <g class="dino-default-eye-left" transform-origin="42px 28px">
+                <circle cx="42" cy="28" r="5" fill="#2E2D4D" />
+                <circle cx="43" cy="27" r="1.8" fill="#FFFFFF" />
+            </g>
+            <g class="dino-default-eye-right" transform-origin="58px 28px">
+                <circle cx="58" cy="28" r="5" fill="#2E2D4D" />
+                <circle cx="59" cy="27" r="1.8" fill="#FFFFFF" />
+            </g>
+            <path d="M 47,36 Q 50,40 53,36" stroke="#2E2D4D" stroke-width="2.5" stroke-linecap="round" fill="none" />
+            
+            <!-- Sideways Black Cap -->
+            <g transform="translate(0, 0)">
+                <!-- Cap Dome -->
+                <path d="M 38,16 C 38,0 62,0 62,16 Z" fill="#2E2D4D" />
+                <!-- Brim (pointing right/backwards) -->
+                <rect x="60" y="12" width="16" height="4" rx="2" fill="#1D1D2C" />
+                <!-- Top Button -->
+                <circle cx="50" cy="3" r="2.5" fill="#1D1D2C" />
+            </g>
+        </g>
+
+        <!-- Pink Dinosaur with Bow -->
+        <g id="dino-pink-bow">
+            <path d="M 25,75 Q 5,75 5,55 Q 5,35 20,40 Q 25,45 25,55 Z" fill="#FFB5A7" />
+            <path d="M 10,60 L 5,55 L 8,45 Z" fill="#F6BD60" />
+            <ellipse cx="35" cy="85" rx="8" ry="5" fill="#F28482" />
+            <ellipse cx="65" cy="85" rx="8" ry="5" fill="#F28482" />
+            <rect x="30" y="35" width="40" height="45" rx="20" fill="#FFB5A7" />
+            <ellipse cx="50" cy="65" rx="15" ry="20" fill="#FFF3B0" />
+            <path d="M 38,28 L 36,20 L 44,20 Z" fill="#F6BD60" />
+            <path d="M 52,26 L 54,16 L 60,20 Z" fill="#F6BD60" />
+            <path d="M 68,34 L 74,28 L 72,38 Z" fill="#F6BD60" />
+            <ellipse class="dino-default-arm-left" cx="28" cy="58" rx="5" ry="8" fill="#F28482" transform="rotate(-15 28 58)" />
+            <ellipse class="dino-default-arm-right" cx="72" cy="58" rx="5" ry="8" fill="#F28482" transform="rotate(15 72 58)" />
+            <path d="M 30,35 Q 30,10 50,10 Q 70,10 70,35 Q 70,45 50,45 Q 30,45 30,35 Z" fill="#FFB5A7" />
+            <ellipse cx="38" cy="35" rx="5" ry="3" fill="#FF9B9B" opacity="0.8" />
+            <ellipse cx="62" cy="35" rx="5" ry="3" fill="#FF9B9B" opacity="0.8" />
+            <g class="dino-default-eye-left" transform-origin="42px 28px">
+                <circle cx="42" cy="28" r="5" fill="#2E2D4D" />
+                <circle cx="43" cy="27" r="1.8" fill="#FFFFFF" />
+            </g>
+            <g class="dino-default-eye-right" transform-origin="58px 28px">
+                <circle cx="58" cy="28" r="5" fill="#2E2D4D" />
+                <circle cx="59" cy="27" r="1.8" fill="#FFFFFF" />
+            </g>
+            <path d="M 47,36 Q 50,40 53,36" stroke="#2E2D4D" stroke-width="2.5" stroke-linecap="round" fill="none" />
+            <!-- Bow Hat -->
+            <g transform="translate(50, 10)">
+                <path d="M 0,0 L -12,-8 L -12,8 Z" fill="#E56B6F" />
+                <path d="M 0,0 L 12,-8 L 12,8 Z" fill="#E56B6F" />
+                <circle cx="0" cy="0" r="4" fill="#B56576" />
+            </g>
+        </g>
+
+        <!-- Wizard Dinosaur (AI Planner) -->
+        <g id="dino-wizard">
+            <!-- Use default dino base -->
+            <use href="#dino-default" />
+            <!-- Wizard Hat -->
+            <path d="M 32,15 L 50,-15 L 68,15 Z" fill="#8A5CF5" />
+            <ellipse cx="50" cy="15" rx="20" ry="4" fill="#6B3FD4" />
+            <!-- Stars on Hat -->
+            <polygon points="50,-2 52,1 55,2 52,3 50,6 48,3 45,2 48,1" fill="#FFF3B0" />
+            <polygon points="42,7 43,9 45,9 43,10 44,12 42,11 40,12 41,10 39,9 41,9" fill="#FFF3B0" transform="scale(0.8) translate(10, 5)" />
+            <!-- Wand -->
+            <line x1="72" y1="58" x2="88" y2="42" stroke="#B5835A" stroke-width="3.5" stroke-linecap="round" />
+            <polygon points="88,37 90,41 94,42 90,43 88,47 86,43 82,42 86,41" fill="#FFF3B0" />
+        </g>
+
+        <!-- Worker Dinosaur (Task In Action) -->
+        <g id="dino-worker">
+            <use href="#dino-default" />
+            <!-- Construction Helmet -->
+            <path d="M 32,22 C 32,10 68,10 68,22 Z" fill="#FFD166" />
+            <rect x="28" y="20" width="44" height="4" rx="2" fill="#FFC03D" />
+            <path d="M 46,12 H 54 V 16 H 46 Z" fill="#FFC03D" />
+        </g>
+
+        <!-- Cool Dinosaur (Distractions Blocked) -->
+        <g id="dino-cool">
+            <use href="#dino-default" />
+            <!-- Sunglasses -->
+            <polygon points="34,24 48,24 46,32 36,32" fill="#1D1D2C" />
+            <polygon points="52,24 66,24 64,32 54,32" fill="#1D1D2C" />
+            <line x1="48" y1="26" x2="52" y2="26" stroke="#1D1D2C" stroke-width="3" />
+            <!-- Sunglasses shine -->
+            <line x1="38" y1="26" x2="42" y2="30" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6" />
+            <line x1="56" y1="26" x2="60" y2="30" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6" />
+        </g>
+
+        <!-- Dancing Dinosaur (Focus Break) -->
+        <g id="dino-dancing">
+            <!-- Raised Arms -->
+            <ellipse cx="24" cy="40" rx="6" ry="10" fill="#4CB97F" transform="rotate(45 24 40)" />
+            <ellipse cx="76" cy="40" rx="6" ry="10" fill="#4CB97F" transform="rotate(-45 76 40)" />
+            <!-- Base Dino without normal arms -->
+            <!-- Tail -->
+            <path d="M 25,75 Q 5,75 5,55 Q 5,35 20,40 Q 25,45 25,55 Z" fill="#60D394" />
+            <path d="M 10,60 L 5,55 L 8,45 Z" fill="#FF9F1C" />
+            <!-- Feet (dancing position) -->
+            <ellipse cx="35" cy="85" rx="8" ry="6" fill="#4CB97F" transform="rotate(15 35 85)" />
+            <ellipse cx="65" cy="88" rx="8" ry="6" fill="#4CB97F" transform="rotate(-15 65 88)" />
+            <!-- Body -->
+            <path d="M 25,55 Q 25,90 50,90 Q 75,90 75,55 Q 75,30 50,30 Q 25,30 25,55 Z" fill="#60D394" />
+            <ellipse cx="50" cy="62" rx="16" ry="20" fill="#FFF3B0" />
+            <!-- Head -->
+            <path d="M 30,35 Q 30,10 50,10 Q 70,10 70,35 Q 70,45 50,45 Q 30,45 30,35 Z" fill="#60D394" transform="rotate(5 50 25)" />
+            <!-- Eyes (happy closed curves) -->
+            <path d="M 37,28 Q 42,23 47,28" stroke="#2E2D4D" stroke-width="3.5" stroke-linecap="round" fill="none" />
+            <path d="M 53,28 Q 58,23 63,28" stroke="#2E2D4D" stroke-width="3.5" stroke-linecap="round" fill="none" />
+            <!-- Blush -->
+            <ellipse cx="35" cy="35" rx="5" ry="3" fill="#FF9B9B" />
+            <ellipse cx="65" cy="35" rx="5" ry="3" fill="#FF9B9B" />
+            <path d="M 46,34 Q 50,39 54,34" stroke="#2E2D4D" stroke-width="2.5" stroke-linecap="round" fill="none" />
+        </g>
+
+        <!-- Studying Dinosaur (Focus Session) -->
+        <g id="dino-studying">
+            <use href="#dino-default" />
+            <!-- Laptop on Desk in front of dino (handled inside card rendering) -->
+        </g>
+
+        <!-- Target Dinosaur (Focus Goals) -->
+        <g id="dino-target">
+            <use href="#dino-default" />
+            <!-- Bow in hand -->
+            <path d="M 72,50 Q 82,58 72,66" stroke="#9A7B56" stroke-width="2.5" fill="none" />
+            <line x1="72" y1="50" x2="72" y2="66" stroke="#E6E6E6" stroke-width="1" />
+        </g>
+
+        <!-- Pink Dinosaur (Priya's Buddy) -->
+        <g id="dino-pink">
+            <!-- Tail -->
+            <path d="M 25,75 Q 5,75 5,55 Q 5,35 20,40 Q 25,45 25,55 Z" fill="#FF8FAB" />
+            <path d="M 10,60 L 5,55 L 8,45 Z" fill="#D67AB1" />
+            <!-- Feet -->
+            <ellipse cx="35" cy="85" rx="8" ry="6" fill="#F0719F" />
+            <ellipse cx="65" cy="85" rx="8" ry="6" fill="#F0719F" />
+            <!-- Body -->
+            <path d="M 25,55 Q 25,90 50,90 Q 75,90 75,55 Q 75,30 50,30 Q 25,30 25,55 Z" fill="#FF8FAB" />
+            <!-- Belly -->
+            <ellipse cx="50" cy="62" rx="16" ry="20" fill="#FFF0F5" />
+            <!-- Back Spikes -->
+            <path d="M 28,38 L 22,32 L 30,28 Z" fill="#D67AB1" />
+            <path d="M 38,28 L 36,20 L 44,20 Z" fill="#D67AB1" />
+            <path d="M 52,26 L 54,16 L 60,20 Z" fill="#D67AB1" />
+            <path d="M 68,34 L 74,28 L 72,38 Z" fill="#D67AB1" />
+            <!-- Tiny Wings -->
+            <path d="M 24,54 C 15,48 10,55 18,60 C 14,64 16,68 24,62" fill="#D67AB1" />
+            <!-- Arms -->
+            <ellipse cx="28" cy="58" rx="5" ry="8" fill="#F0719F" transform="rotate(-15 28 58)" />
+            <ellipse cx="72" cy="58" rx="5" ry="8" fill="#F0719F" transform="rotate(15 72 58)" />
+            <!-- Head -->
+            <path d="M 30,35 Q 30,10 50,10 Q 70,10 70,35 Q 70,45 50,45 Q 30,45 30,35 Z" fill="#FF8FAB" />
+            <!-- Blush -->
+            <ellipse cx="38" cy="35" rx="5" ry="3" fill="#FFB3B3" opacity="0.8" />
+            <ellipse cx="62" cy="35" rx="5" ry="3" fill="#FFB3B3" opacity="0.8" />
+            <!-- Eyes -->
+            <circle cx="42" cy="28" r="5" fill="#2E2D4D" />
+            <circle cx="43" cy="27" r="1.8" fill="#FFFFFF" />
+            <circle cx="58" cy="28" r="5" fill="#2E2D4D" />
+            <circle cx="59" cy="27" r="1.8" fill="#FFFFFF" />
+            <!-- Smile -->
+            <path d="M 47,36 Q 50,40 53,36" stroke="#2E2D4D" stroke-width="2.5" stroke-linecap="round" fill="none" />
+        </g>
+
+        <!-- Floating Island (Your World) -->
+        <g id="world-island">
+            <!-- Sky/Clouds Backdrop -->
+            <path d="M 10,75 Q 25,60 45,70 T 80,60 T 115,75 T 150,65 T 190,75" fill="none" stroke="#E6EEF8" stroke-width="6" stroke-linecap="round" opacity="0.4" />
+            <!-- Floating Dirt Base -->
+            <path d="M 30,120 L 170,120 Q 150,185 100,185 Q 50,185 30,120 Z" fill="#8E7355" />
+            <!-- Under dirt shadow/highlights -->
+            <path d="M 50,120 Q 80,150 100,150 Q 120,150 150,120" fill="none" stroke="#755E45" stroke-width="8" />
+            <path d="M 70,120 L 100,175 L 130,120" fill="none" stroke="#5C4936" stroke-width="12" />
+            <!-- Vine/Roots -->
+            <path d="M 60,125 Q 55,145 58,155" fill="none" stroke="#5C4936" stroke-width="2.5" stroke-linecap="round" />
+            <path d="M 135,125 Q 140,140 137,150" fill="none" stroke="#5C4936" stroke-width="2" stroke-linecap="round" />
+            <!-- Grassy Top Island Layer -->
+            <ellipse cx="100" cy="120" rx="72" ry="18" fill="#8CE072" />
+            <ellipse cx="100" cy="116" rx="70" ry="16" fill="#A8F290" />
+            <!-- Mini Paths on Island -->
+            <path d="M 60,116 Q 100,122 135,112" fill="none" stroke="#F6D582" stroke-width="6" stroke-linecap="round" opacity="0.8" />
+            <!-- Cute Buildings (Castle, Houses) -->
+            <!-- Central Castle -->
+            <rect x="90" y="85" width="20" height="22" fill="#E6EEF8" rx="2" />
+            <polygon points="87,85 100,68 113,85" fill="#FF7B54" /> <!-- Red roof -->
+            <rect x="96" y="95" width="8" height="12" rx="4" fill="#6B68FC" /> <!-- Door -->
+            <!-- Left Tower -->
+            <rect x="76" y="80" width="12" height="30" fill="#D3DFEE" rx="1" />
+            <polygon points="74,80 82,66 90,80" fill="#54B4FF" />
+            <circle cx="82" cy="87" r="2" fill="#FFE347" />
+            <!-- Right House -->
+            <rect x="115" y="92" width="14" height="16" fill="#F7F7FD" rx="1" />
+            <polygon points="112,92 122,82 132,92" fill="#FFB447" />
+            <!-- Trees -->
+            <!-- Tree 1 -->
+            <rect x="52" y="102" width="3" height="12" fill="#6E503B" />
+            <circle cx="53" cy="98" r="8" fill="#4CD964" />
+            <!-- Tree 2 -->
+            <rect x="142" y="98" width="3" height="14" fill="#6E503B" />
+            <circle cx="143" cy="93" r="9" fill="#28C76F" />
+            <!-- Mini Trees/Shrubs -->
+            <circle cx="70" cy="110" r="5" fill="#4CD964" />
+            <circle cx="128" cy="108" r="6" fill="#32C5FF" />
+            <!-- Clouds Floating Around -->
+            <path d="M 10,140 Q 18,130 26,140 Q 34,130 42,140" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.8" />
+            <path d="M 160,95 Q 168,88 176,95 T 192,95" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" opacity="0.8" />
+        </g>
+
+        <!-- Stats Icons -->
+        <g id="streak-flame">
+            <path d="M 12,22 C 12,22 6,17 8,11 C 9.5,6.5 15,3 15,3 C 15,3 16.5,7 19,10 C 21.5,13 21,17 19,20 C 17.5,21.5 14.5,22.5 12,22 Z" fill="#FF7B54" />
+            <path d="M 12,22 C 10,22 8,19 9,15 C 9.6,12 13,9.5 13,9.5 C 13,9.5 13.5,12 15,13.5 C 16.5,15 16,18 15,20 C 14,21.5 13,22 12,22 Z" fill="#FFA500" />
+            <path d="M 12,22 C 11,22 10,20.5 10.5,18 C 11,16.5 13,15 13,15 C 13,15 13.5,16.5 14,17.5 C 14.5,18.5 14.2,20 13.5,21 C 13,21.8 12.5,22 12,22 Z" fill="#FFE347" />
+        </g>
+        
+        <g id="xp-star">
+            <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" fill="#FFC03D" stroke="#E6A100" stroke-width="1.5" stroke-linejoin="round" />
+            <polygon points="12,4 14,10 20,10 16,14 17,19 12,16 7,19 8,14 4,10 10,10" fill="#FFE347" />
+        </g>
+
+        <g id="energy-heart">
+            <path d="M 12,7 C 12,7 10,3 6.5,3 C 3.5,3 1.5,5.5 1.5,8.5 C 1.5,13.5 7,18.5 12,21 C 17,18.5 22.5,13.5 22.5,8.5 C 22.5,5.5 20.5,3 17.5,3 C 14,3 12,7 12,7 Z" fill="#FF5252" />
+            <!-- Highlight -->
+            <path d="M 5,6 Q 3.5,8.5 5,11" stroke="#FFD1D1" stroke-width="2" stroke-linecap="round" fill="none" />
+        </g>
+        <!-- Front Dinosaur (Walking towards) -->
+        <g id="dino-front">
+            <use href="#dino-default" />
+        </g>
+
+        <!-- Back Dinosaur (Walking away) -->
+        <g id="dino-back">
+            <!-- Feet -->
+            <ellipse cx="35" cy="85" rx="8" ry="6" fill="#4CB97F" />
+            <ellipse cx="65" cy="85" rx="8" ry="6" fill="#4CB97F" />
+            <!-- Body (No Belly) -->
+            <path d="M 25,55 Q 25,90 50,90 Q 75,90 75,55 Q 75,30 50,30 Q 25,30 25,55 Z" fill="#60D394" />
+            <!-- Head (No Face) -->
+            <path d="M 30,35 Q 30,10 50,10 Q 70,10 70,35 Q 70,45 50,45 Q 30,45 30,35 Z" fill="#60D394" />
+            <!-- Back Spikes (Centered) -->
+            <polygon points="50,10 45,0 55,0" fill="#FF9F1C" />
+            <polygon points="50,25 43,15 57,15" fill="#FF9F1C" />
+            <polygon points="50,45 42,35 58,35" fill="#FF9F1C" />
+            <polygon points="50,65 40,55 60,55" fill="#FF9F1C" />
+            <polygon points="50,85 45,75 55,75" fill="#FF9F1C" />
+            <!-- Arms (behind) -->
+            <ellipse cx="28" cy="58" rx="5" ry="8" fill="#4CB97F" transform="rotate(-15 28 58)" opacity="0.8" />
+            <ellipse cx="72" cy="58" rx="5" ry="8" fill="#4CB97F" transform="rotate(15 72 58)" opacity="0.8" />
+            <!-- Tail (peeking from side) -->
+            <path d="M 25,75 Q 5,75 5,55 Q 5,35 20,40 Q 25,45 25,55 Z" fill="#60D394" />
+        </g>
+
+        <!-- Back Dinosaur with Hammer -->
+        <g id="dino-back-hammer">
+            <use href="#dino-back" />
+            <!-- Raised Right Arm -->
+            <ellipse cx="85" cy="40" rx="5" ry="12" fill="#4CB97F" transform="rotate(45 85 40)" />
+            <!-- Hammer -->
+            <rect x="80" y="10" width="6" height="30" fill="#8B4513" transform="rotate(20 83 25)" />
+            <rect x="75" y="8" width="20" height="12" fill="#A9A9A9" rx="2" transform="rotate(20 83 25)" />
+        </g>
+
+        <!-- Side Dinosaur (Running sideways) -->
+        <g id="dino-side">
+            <!-- Back Arm & Foot -->
+            <ellipse class="dino-limb-arm-back" cx="45" cy="58" rx="4" ry="7" fill="#3D9365" />
+            <ellipse class="dino-limb-leg-back" cx="45" cy="85" rx="7" ry="5" fill="#3D9365" />
+            <!-- Tail -->
+            <path d="M 35,70 Q 15,70 10,50 Q 20,55 35,60 Z" fill="#60D394" />
+            <polygon points="20,56 15,48 25,50" fill="#FF9F1C" />
+            <!-- Body -->
+            <path d="M 40,40 Q 30,70 45,90 Q 65,90 70,60 Q 75,35 60,30 Z" fill="#60D394" />
+            <!-- Belly profile -->
+            <path d="M 60,40 Q 75,60 65,85 Q 55,80 50,60 Z" fill="#FFF3B0" />
+            <!-- Head -->
+            <circle cx="55" cy="30" r="20" fill="#60D394" />
+            <!-- Snout -->
+            <path d="M 55,10 Q 85,10 80,35 Q 75,45 55,45 Z" fill="#60D394" />
+            <!-- Back Spikes Profile -->
+            <polygon points="35,30 25,20 40,20" fill="#FF9F1C" />
+            <polygon points="30,50 15,45 32,40" fill="#FF9F1C" />
+            <polygon points="32,70 20,65 35,60" fill="#FF9F1C" />
+            <!-- Eye -->
+            <circle cx="65" cy="25" r="4" fill="#2E2D4D" />
+            <circle cx="66" cy="24" r="1.5" fill="#FFFFFF" />
+            <!-- Smile -->
+            <path d="M 70,35 Q 75,38 78,33" stroke="#2E2D4D" stroke-width="2" stroke-linecap="round" fill="none" />
+            <!-- Blush -->
+            <ellipse cx="60" cy="32" rx="4" ry="2" fill="#FF9B9B" opacity="0.8" />
+            <!-- Front Arm & Foot -->
+            <ellipse class="dino-limb-arm-front" cx="55" cy="60" rx="5" ry="8" fill="#4CB97F" />
+            <ellipse class="dino-limb-leg-front" cx="58" cy="88" rx="8" ry="6" fill="#4CB97F" />
+        </g>
+    </svg>
+
+    <!-- App Wrapper -->
+    <div class="app-container">
+        
+        <!-- Figma View / Interactive Mode Selector Toggle -->
+        <div class="mode-selector-bar">
+            <span class="logo-text">🦖 CuteToDo Studio</span>
+            <div class="toggle-buttons">
+                <button id="btn-mode-interactive" class="mode-btn active">⚡ Interactive App</button>
+                <button id="btn-mode-figma" class="mode-btn">📐 Figma Boards Layout</button>
+            </div>
+        </div>
+
+        <!-- MAIN LAYOUT 1: INTERACTIVE APP -->
+        <div id="interactive-app-layout" class="layout-wrapper active">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header" id="btn-sidebar-profile" style="cursor: pointer; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                    <div class="avatar-container">
+                        <svg class="avatar-svg" viewBox="0 0 100 100">
+                            <use href="#dino-default" />
+                        </svg>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Sawmiyaa</span>
+                        <span class="user-title">Dino Trainer</span>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-item active" data-tab="home">
+                        <span class="nav-icon">🏠</span> Home
+                    </a>
+                    <a href="#" class="nav-item" data-tab="tasks">
+                        <span class="nav-icon">📋</span> Tasks
+                    </a>
+                    <a href="#" class="nav-item" data-tab="focus">
+                        <span class="nav-icon">⏱️</span> Focus
+                    </a>
+                    <a href="#" class="nav-item" data-tab="friends">
+                        <span class="nav-icon">👥</span> Friends
+                    </a>
+                    <a href="#" class="nav-item disabled-nav">
+                        <span class="nav-icon">🌍</span> World
+                    </a>
+                    <a href="#" class="nav-item disabled-nav">
+                        <span class="nav-icon">📊</span> Stats
+                    </a>
+                    <a href="#" class="nav-item disabled-nav">
+                        <span class="nav-icon">🛒</span> Store
+                    </a>
+                </nav>
+
+                <div class="sidebar-profile-card">
+                    <div class="profile-header">
+                        <span class="profile-name">Sawmiyaa</span>
+                        <span class="profile-level">Level 12</span>
+                    </div>
+                    <div class="xp-bar-container">
+                        <div class="xp-bar-progress" style="width: 62%;"></div>
+                    </div>
+                    <div class="profile-footer">
+                        <span>620 / 1000 XP</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="main-content">
+                <!-- Top Status Header -->
+                <header class="content-header">
+                    <h1 id="view-title">Home Flow</h1>
+                    
+                    <div class="status-bar">
+                        <div class="status-badge streak">
+                            <svg class="badge-icon" viewBox="0 0 24 24"><use href="#streak-flame"/></svg>
+                            <div class="badge-text">
+                                <span class="badge-value" id="val-streak">7</span>
+                                <span class="badge-label">Day Streak</span>
+                            </div>
+                        </div>
+
+                        <div class="status-badge xp">
+                            <svg class="badge-icon" viewBox="0 0 24 24"><use href="#xp-star"/></svg>
+                            <div class="badge-text">
+                                <span class="badge-value" id="val-xp">620</span>
+                                <span class="badge-label">XP</span>
+                            </div>
+                        </div>
+
+                        <div class="status-badge energy">
+                            <svg class="badge-icon" viewBox="0 0 24 24"><use href="#energy-heart"/></svg>
+                            <div class="badge-text">
+                                <span class="badge-value" id="val-energy">3</span>
+                                <span class="badge-label">Energy</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- TAB PANELS -->
+                <div class="tab-panels-container">
+                    
+                    <!-- 1. HOME TAB PANEL -->
+                    <section id="panel-home" class="tab-panel active">
+                        <div class="home-grid">
+                            <!-- Welcome Card -->
+                            <div class="card welcome-card col-span-2">
+                                <div class="welcome-text-side">
+                                    <h2>Good morning, Sawmiyaa! ✨</h2>
+                                    <p>Let's make today amazing! You have <strong id="todo-count-banner">5 tasks</strong> on your plate.</p>
+                                    <div class="quick-add-buttons">
+                                        <button class="btn btn-primary" id="btn-home-add-task">➕ Add Task</button>
+                                        <button class="btn btn-secondary-purple" id="btn-home-ai-planner">🔮 AI Planner</button>
+                                        <button class="btn btn-icon-round" title="Voice Add">🎤</button>
+                                        <button class="btn btn-icon-round" title="Snap Add">📸</button>
+                                    </div>
+                                </div>
+                                <div class="welcome-mascot-side">
+                                    <svg viewBox="0 0 100 100" class="welcome-dino">
+                                        <use href="#dino-default" />
+                                    </svg>
+                                    <div class="speech-bubble">I've got these! Don't worry 😊</div>
+                                </div>
+                            </div>
+
+                            <!-- Streak & Progress Card -->
+                            <div class="card streak-card">
+                                <h3>Streak & Progress</h3>
+                                <div class="streak-large">
+                                    <svg viewBox="0 0 24 24" class="flame-huge"><use href="#streak-flame"/></svg>
+                                    <div class="streak-large-number">7</div>
+                                    <div class="streak-large-lbl">Day Streak</div>
+                                </div>
+                                <div class="streak-calendar-row">
+                                    <div class="streak-day active"><span class="day-dot">🔥</span><span class="day-name">Mon</span></div>
+                                    <div class="streak-day active"><span class="day-dot">🔥</span><span class="day-name">Tue</span></div>
+                                    <div class="streak-day active"><span class="day-dot">🔥</span><span class="day-name">Wed</span></div>
+                                    <div class="streak-day active"><span class="day-dot">🔥</span><span class="day-name">Thu</span></div>
+                                    <div class="streak-day active"><span class="day-dot">🔥</span><span class="day-name">Fri</span></div>
+                                    <div class="streak-day active"><span class="day-dot">🔥</span><span class="day-name">Sat</span></div>
+                                    <div class="streak-day"><span class="day-dot">⚪</span><span class="day-name">Sun</span></div>
+                                </div>
+                                <div class="progress-details">
+                                    <div class="progress-lbl-row">
+                                        <span>Level 12</span>
+                                        <span>620 / 1000 XP</span>
+                                    </div>
+                                    <div class="xp-bar-container">
+                                        <div class="xp-bar-progress" style="width: 62%;"></div>
+                                    </div>
+                                    <div class="next-reward-box">
+                                        🎁 Next Reward at Level 13!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Today's Quick Tasks -->
+                            <div class="card tasks-preview-card">
+                                <div class="card-header-row">
+                                    <h3>Today's Tasks</h3>
+                                    <span class="badge-count" id="task-badge-count">5</span>
+                                </div>
+                                <div class="tasks-mini-list" id="home-tasks-list">
+                                    <!-- Dynamic list populated by app.js -->
+                                </div>
+                                <button class="btn btn-text-link" id="btn-view-all-tasks">View all tasks &rarr;</button>
+                            </div>
+
+                            <!-- Buddy Activity Card -->
+                            <div class="card buddy-card">
+                                <h3>Buddy Activity</h3>
+                                <div class="buddy-activity-content">
+                                    <div class="mascot-anim-container">
+                                        <svg viewBox="0 0 100 100" class="buddy-work-svg">
+                                            <use href="#dino-default" />
+                                        </svg>
+                                    </div>
+                                    <div class="buddy-status-text">
+                                        <p class="buddy-speech">"Your buddy is working on it!"</p>
+                                        <p class="buddy-subtext">You're doing great! Keep going!</p>
+                                        <div class="progress-container-mini">
+                                            <div class="progress-bar-fill animated-stripes" id="buddy-work-progress" style="width: 60%"></div>
+                                        </div>
+                                        <span class="progress-pct" id="buddy-work-pct">60%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quick Actions -->
+                            <div class="card quick-actions-card">
+                                <h3>Quick Actions</h3>
+                                <div class="quick-actions-grid">
+                                    <button class="action-btn-item" id="qa-focus">
+                                        <span class="action-icon purple-bg">⏱️</span>
+                                        <span class="action-label">Focus Mode</span>
+                                    </button>
+                                    <button class="action-btn-item" id="qa-world">
+                                        <span class="action-icon green-bg">🌍</span>
+                                        <span class="action-label">View World</span>
+                                    </button>
+                                    <button class="action-btn-item" id="qa-stats">
+                                        <span class="action-icon blue-bg">📊</span>
+                                        <span class="action-label">Stats</span>
+                                    </button>
+                                    <button class="action-btn-item" id="qa-store">
+                                        <span class="action-icon orange-bg">🛒</span>
+                                        <span class="action-label">Store</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Your World floating island widget -->
+                            <div class="card world-card col-span-2">
+                                <div class="world-content-wrapper">
+                                    <div class="world-text-panel">
+                                        <h3>Your World</h3>
+                                        <div class="world-stats-grid">
+                                            <div class="world-stat-item">🏠 <strong>12</strong> Buildings</div>
+                                            <div class="world-stat-item">🌳 <strong>34</strong> Trees</div>
+                                            <div class="world-stat-item">⭐ <strong>620</strong> XP Earned</div>
+                                            <div class="world-stat-item">✅ <strong>48</strong> Tasks Done</div>
+                                        </div>
+                                        <div class="world-bubble">
+                                            <div class="world-bubble-text">"Wow! Look how amazing your world is!"</div>
+                                            <svg viewBox="0 0 100 100" class="world-mini-dino"><use href="#dino-default"/></svg>
+                                        </div>
+                                        <div class="world-action-buttons">
+                                            <button class="btn btn-secondary-world" id="btn-world-decorate">Decorate</button>
+                                            <button class="btn btn-secondary-world" id="btn-world-shop">Shop</button>
+                                            <button class="btn btn-secondary-world" id="btn-world-upgrade">Upgrade</button>
+                                            <button class="btn btn-primary" id="btn-open-world">Open World</button>
+                                        </div>
+                                    </div>
+                                    <div class="world-visual-panel">
+                                        <div class="floating-island-wrapper">
+                                            <svg viewBox="0 0 200 200" class="floating-island-svg">
+                                                <use href="#world-island"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Achievements Card -->
+                            <div class="card achievements-card">
+                                <h3>Achievements</h3>
+                                <div class="achievements-list">
+                                    <div class="achievement-item">
+                                        <div class="ach-badge focus-master">🧠</div>
+                                        <div class="ach-info">
+                                            <span class="ach-title">Focus Master</span>
+                                            <span class="ach-desc">Focus for 15 hours total</span>
+                                            <div class="ach-progress-row">
+                                                <div class="progress-bar-small"><div class="progress-bar-fill" style="width: 70%"></div></div>
+                                                <span class="ach-progress-text">7/10</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="achievement-item">
+                                        <div class="ach-badge early-bird">☀️</div>
+                                        <div class="ach-info">
+                                            <span class="ach-title">Early Bird</span>
+                                            <span class="ach-desc">Complete a task before 9:00 AM</span>
+                                            <div class="ach-progress-row">
+                                                <div class="progress-bar-small"><div class="progress-bar-fill" style="width: 40%"></div></div>
+                                                <span class="ach-progress-text">2/5</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="achievement-item completed">
+                                        <div class="ach-badge streak-hero">🏆</div>
+                                        <div class="ach-info">
+                                            <span class="ach-title">Streak Hero</span>
+                                            <span class="ach-desc">Maintain a 7-day streak</span>
+                                            <div class="ach-progress-row">
+                                                <div class="progress-bar-small"><div class="progress-bar-fill" style="width: 100%"></div></div>
+                                                <span class="ach-progress-text">7/7</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Daily Quote Card -->
+                            <div class="card quote-card">
+                                <h3>Daily Quote</h3>
+                                <div class="quote-content">
+                                    <blockquote>"Small progress is still progress."</blockquote>
+                                    <div class="quote-mascot">
+                                        <svg viewBox="0 0 100 100" class="quote-dino-svg"><use href="#dino-default"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- 2. TASKS TAB PANEL -->
+                    <section id="panel-tasks" class="tab-panel">
+                        <div class="tasks-animation-canvas" id="tasks-anim-canvas"></div>
+                        <div class="tasks-layout-grid">
+                            
+                            <!-- Left Column: Tasks List & Add -->
+                            <div class="tasks-list-panel">
+                                <div class="tasks-panel-header">
+                                    <div class="search-box">
+                                        <span class="search-icon">🔍</span>
+                                        <input type="text" id="task-search-input" placeholder="Search tasks...">
+                                    </div>
+                                    <div class="filter-tabs">
+                                        <button class="filter-btn active" data-filter="all">All</button>
+                                        <button class="filter-btn" data-filter="today">Today</button>
+                                        <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                                        <button class="filter-btn" data-filter="completed">Completed</button>
+                                    </div>
+                                </div>
+
+                                <div class="tasks-list-scrollable" id="main-tasks-container">
+                                    <!-- Populated dynamically -->
+                                </div>
+
+                                <div class="tasks-panel-footer">
+                                    <button class="btn btn-primary w-full" id="btn-add-task-modal">➕ Add Task</button>
+                                </div>
+                            </div>
+
+                            <!-- Right Column: Task Details OR Task in Action OR Completed Celebration -->
+                            <div class="tasks-details-panel" id="task-dynamic-details-pane">
+                                <!-- Default empty / select state -->
+                                <div class="detail-state-empty active" id="details-state-empty">
+                                    <svg viewBox="0 0 100 100" class="empty-dino"><use href="#dino-default"/></svg>
+                                    <h4>No Task Selected</h4>
+                                    <p>Select a task from the list to view its details or start working on it!</p>
+                                </div>
+
+                                <!-- STATE A: Task Details View -->
+                                <div class="detail-state-card" id="details-state-view">
+                                    <div class="details-header">
+                                        <span class="badge-priority priority-high" id="det-priority">High Priority</span>
+                                        <h2 id="det-title">Finish Math Assignment</h2>
+                                    </div>
+                                    <div class="details-body">
+                                        <p class="det-description" id="det-desc">Complete all problems from chapter 5. Don't forget to check examples.</p>
+                                        <div class="det-meta-row">
+                                            <span class="det-meta-item"><span class="icon">📅</span> <span id="det-due">Due Today, 10:00 AM</span></span>
+                                        </div>
+                                        
+                                        <div class="subtasks-section">
+                                            <h4>Subtasks</h4>
+                                            <div class="subtasks-list" id="det-subtasks-container">
+                                                <!-- Dynamic subtasks checklist -->
+                                            </div>
+                                        </div>
+
+                                        <div class="buddy-status-box">
+                                            <div class="buddy-row">
+                                                <svg viewBox="0 0 100 100" class="buddy-tiny-dino"><use href="#dino-default"/></svg>
+                                                <div>
+                                                    <p class="buddy-title-small">Buddy is ready!</p>
+                                                    <p class="buddy-desc-small">Work together to earn +20 XP and +1 Energy.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="details-footer-actions">
+                                        <button class="btn btn-secondary-purple" id="btn-edit-task-action">Edit Task</button>
+                                        <button class="btn btn-primary flex-1" id="btn-start-task-action">🚀 Start Task</button>
+                                        <button class="btn btn-secondary-green" id="btn-mark-done-action">✓ Mark Done</button>
+                                    </div>
+                                </div>
+
+                                <!-- STATE B: Task In Action Simulator -->
+                                <div class="detail-state-card task-in-action-card" id="details-state-action">
+                                    <div class="action-header">
+                                        <span class="badge-status-in-progress">IN PROGRESS</span>
+                                        <h3 id="action-task-title">Finish Math Assignment</h3>
+                                    </div>
+                                    <div class="action-body-content">
+                                        <div class="action-mascot-visual">
+                                            <!-- Wooden sign board -->
+                                            <div class="wooden-sign">
+                                                <div class="sign-board">
+                                                    <span class="sign-label">IN PROGRESS</span>
+                                                    <span class="sign-title" id="action-sign-title">Finish Math Assignment</span>
+                                                </div>
+                                                <div class="sign-post"></div>
+                                            </div>
+                                            <svg viewBox="0 0 100 100" class="action-dino-helmet">
+                                                <use href="#dino-worker"/>
+                                            </svg>
+                                        </div>
+                                        <div class="action-status-block">
+                                            <h4>Buddy is working on it!</h4>
+                                            <p>Please wait while buddy completes the task, or boost their productivity by staying focused.</p>
+                                            
+                                            <div class="timer-display-mini" id="action-timer-countdown">00:15</div>
+                                            <div class="progress-container-mini">
+                                                <div class="progress-bar-fill animated-stripes" id="action-progress-bar" style="width: 0%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="action-footer">
+                                        <button class="btn btn-danger w-full" id="btn-stop-buddy-action">🛑 Stop Buddy</button>
+                                    </div>
+                                </div>
+
+                                <!-- STATE C: Completed Celebration -->
+                                <div class="detail-state-card completed-celebration-card" id="details-state-completed">
+                                    <div class="celebration-confetti-bg"></div>
+                                    <div class="celebration-body">
+                                        <svg viewBox="0 0 100 100" class="celebration-dino-happy animate-bounce">
+                                            <use href="#dino-dancing"/>
+                                        </svg>
+                                        <div class="celebration-bin">
+                                            <div class="bin-box">DONE</div>
+                                        </div>
+                                        
+                                        <h2>Completed!</h2>
+                                        <p class="celebration-success-msg">Great job! Task completed.</p>
+                                        
+                                        <div class="reward-pills-row">
+                                            <span class="reward-pill xp">+20 XP</span>
+                                            <span class="reward-pill energy">+1 Energy</span>
+                                        </div>
+                                    </div>
+                                    <div class="celebration-footer">
+                                        <button class="btn btn-primary w-full" id="btn-complete-awesome">Awesome! 🎉</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Third Column / Panel Option: AI Planner Card -->
+                            <div class="tasks-ai-planner-panel" id="tasks-ai-planner-pane">
+                                <div class="planner-header">
+                                    <svg viewBox="0 0 100 100" class="planner-wizard-dino"><use href="#dino-wizard"/></svg>
+                                    <div class="planner-speech-bubble">
+                                        <h4>AI Planner</h4>
+                                        <p>"I can help you plan your day!"</p>
+                                    </div>
+                                </div>
+                                <div class="planner-body">
+                                    <h5>Here's your smart plan:</h5>
+                                    <div class="planner-timeline">
+                                        <div class="timeline-item">
+                                            <span class="time">9:00 AM - 11:00 AM</span>
+                                            <div class="timeline-content">
+                                                <strong>📚 Study Math</strong>
+                                                <span class="timeline-subtext">Focus on algebra problems</span>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item break">
+                                            <span class="time">11:00 AM - 11:30 AM</span>
+                                            <div class="timeline-content">
+                                                <strong>☕ Break</strong>
+                                                <span class="timeline-subtext">Stretch and hydrate</span>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <span class="time">11:30 AM - 12:30 PM</span>
+                                            <div class="timeline-content">
+                                                <strong>📖 Read 20 Pages</strong>
+                                                <span class="timeline-subtext">Finish chapter 3 of science book</span>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item break">
+                                            <span class="time">12:30 PM - 1:30 PM</span>
+                                            <div class="timeline-content">
+                                                <strong>🍎 Lunch</strong>
+                                                <span class="timeline-subtext">Healthy meal block</span>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-item">
+                                            <span class="time">6:00 PM - 7:00 PM</span>
+                                            <div class="timeline-content">
+                                                <strong>💪 Gym Workout</strong>
+                                                <span class="timeline-subtext">Cardio and leg routine</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="planner-footer">
+                                    <button class="btn btn-secondary-purple w-full" id="btn-apply-ai-plan">Apply Plan to Tasks</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- 3. FOCUS TAB PANEL -->
+                    <section id="panel-focus" class="tab-panel">
+                        <div class="focus-grid">
+                            
+                            <!-- Left panel: Timer Controller & Session -->
+                            <div class="card focus-timer-card col-span-2">
+                                <div class="focus-timer-header-tabs">
+                                    <h3>Focus Mode</h3>
+                                    <div class="timer-mode-selector">
+                                        <select id="timer-type-dropdown">
+                                            <option value="pomodoro">Pomodoro</option>
+                                            <option value="short-break">Short Break</option>
+                                            <option value="long-break">Long Break</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="focus-timer-display-area" id="focus-timer-section">
+                                    <!-- STATE A: Focus Mode Duration Selector -->
+                                    <div class="focus-setup-view active" id="focus-setup-view">
+                                        <div class="setup-layout">
+                                            <div class="setup-dino-wrap">
+                                                <svg viewBox="0 0 100 100" class="setup-dino"><use href="#dino-default"/></svg>
+                                                <div class="speech-bubble">Let's focus together! Choose your duration.</div>
+                                            </div>
+                                            <div class="duration-buttons">
+                                                <button class="btn btn-duration" data-mins="25">25 Min</button>
+                                                <button class="btn btn-duration" data-mins="50">50 Min</button>
+                                                <button class="btn btn-duration" data-mins="75">75 Min</button>
+                                                <button class="btn btn-duration" data-mins="custom">Custom</button>
+                                            </div>
+                                            <div class="custom-duration-input" id="custom-duration-box" style="display: none;">
+                                                <input type="number" id="custom-min-input" min="1" max="180" value="25">
+                                                <span>minutes</span>
+                                            </div>
+                                            <button class="btn btn-primary" id="btn-start-focus-session">Start Focus Session 🚀</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- STATE B: Active Focus Session Timer -->
+                                    <div class="focus-active-view" id="focus-active-view">
+                                        <div class="timer-radial-progress">
+                                            <!-- Ring backdrop and progress circle -->
+                                            <svg class="radial-svg" viewBox="0 0 160 160">
+                                                <circle class="radial-bg" cx="80" cy="80" r="70" />
+                                                <circle class="radial-bar" cx="80" cy="80" r="70" id="timer-progress-ring" />
+                                            </svg>
+                                            <div class="radial-text">
+                                                <span class="timer-countdown-text" id="focus-timer-clock">24:59</span>
+                                                <span class="timer-sub-lbl">Focus on your goal!</span>
+                                            </div>
+                                        </div>
+                                        <div class="active-mascot-wrap">
+                                            <svg viewBox="0 0 100 100" class="studying-dino-svg"><use href="#dino-default"/></svg>
+                                            <div class="speech-bubble">You can do it! 🦖💻</div>
+                                        </div>
+                                        <div class="active-timer-controls">
+                                            <button class="btn btn-icon-round large" id="btn-focus-pause" title="Play/Pause">⏸️</button>
+                                            <button class="btn btn-secondary-purple" id="btn-focus-skip">Skip Session</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- STATE C: Break Timer -->
+                                    <div class="focus-break-view" id="focus-break-view">
+                                        <div class="break-radial-progress">
+                                            <svg class="radial-svg" viewBox="0 0 160 160">
+                                                <circle class="radial-bg" cx="80" cy="80" r="70" />
+                                                <circle class="radial-bar break" cx="80" cy="80" r="70" id="break-progress-ring" />
+                                            </svg>
+                                            <div class="radial-text">
+                                                <span class="timer-countdown-text" id="break-timer-clock">04:59</span>
+                                                <span class="timer-sub-lbl">Break Time!</span>
+                                            </div>
+                                        </div>
+                                        <div class="active-mascot-wrap">
+                                            <svg viewBox="0 0 100 100" class="break-dino-svg animate-bounce"><use href="#dino-dancing"/></svg>
+                                            <div class="speech-bubble">Take a short break, you deserve it! 🎈</div>
+                                        </div>
+                                        <div class="active-timer-controls">
+                                            <button class="btn btn-primary" id="btn-break-skip">Skip Break &rarr;</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right panel: Focus Stats -->
+                            <div class="card focus-stats-card">
+                                <h3>Focus Stats</h3>
+                                <div class="focus-time-header">
+                                    <span class="focus-time-lbl">Focus Time</span>
+                                    <span class="focus-time-value" id="val-focus-time">2h 35m</span>
+                                </div>
+                                <div class="focus-bar-chart">
+                                    <div class="bar-item"><div class="bar-fill" style="height: 40%"></div><span class="day">M</span></div>
+                                    <div class="bar-item"><div class="bar-fill" style="height: 60%"></div><span class="day">T</span></div>
+                                    <div class="bar-item"><div class="bar-fill" style="height: 25%"></div><span class="day">W</span></div>
+                                    <div class="bar-item"><div class="bar-fill" style="height: 80%"></div><span class="day">T</span></div>
+                                    <div class="bar-item"><div class="bar-fill" style="height: 50%"></div><span class="day">F</span></div>
+                                    <div class="bar-item active"><div class="bar-fill" style="height: 90%"></div><span class="day font-bold">S</span></div>
+                                    <div class="bar-item"><div class="bar-fill" style="height: 0%"></div><span class="day">S</span></div>
+                                </div>
+                                <div class="focus-stats-row">
+                                    <div class="stat-mini-item">
+                                        <span class="num">4</span>
+                                        <span class="lbl">Sessions</span>
+                                    </div>
+                                    <div class="stat-mini-item">
+                                        <span class="num">6</span>
+                                        <span class="lbl">Tasks Done</span>
+                                    </div>
+                                </div>
+                                <button class="btn btn-secondary-purple w-full" id="btn-view-insights">View Insights</button>
+                            </div>
+
+                            <!-- Focus Goals Progress -->
+                            <div class="card focus-goals-card">
+                                <h3>Focus Goals</h3>
+                                <div class="focus-goals-list">
+                                    <div class="goal-item-row">
+                                        <div class="goal-label-block">
+                                            <span class="lbl">Daily Focus Goal</span>
+                                            <span class="val">3h 00m</span>
+                                        </div>
+                                        <div class="goal-progress-bar-container">
+                                            <div class="progress-bar-fill purple" style="width: 86%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="goal-item-row">
+                                        <div class="goal-label-block">
+                                            <span class="lbl">Weekly Goal</span>
+                                            <span class="val">15h 00m</span>
+                                        </div>
+                                        <div class="goal-progress-bar-container">
+                                            <div class="progress-bar-fill blue" style="width: 60%;"></div>
+                                        </div>
+                                        <span class="goal-subtext">12h 45m / 15h 00m</span>
+                                    </div>
+                                    <div class="goal-item-row">
+                                        <div class="goal-label-block">
+                                            <span class="lbl">Monthly Goal</span>
+                                            <span class="val">60h 00m</span>
+                                        </div>
+                                        <div class="goal-progress-bar-container">
+                                            <div class="progress-bar-fill green" style="width: 53%;"></div>
+                                        </div>
+                                        <span class="goal-subtext">32h 20m / 60h 00m</span>
+                                    </div>
+                                </div>
+                                <div class="goal-mascot-row">
+                                    <svg viewBox="0 0 100 100" class="goal-dino-svg"><use href="#dino-target"/></svg>
+                                    <div class="goal-dino-bubble">Keep hitting those targets! 🎯</div>
+                                </div>
+                            </div>
+
+                            <!-- Focus Music Player -->
+                            <div class="card focus-music-card">
+                                <h3>Focus Music</h3>
+                                <div class="player-container">
+                                    <div class="playlist-header">
+                                        <span class="playlist-icon">🎵</span>
+                                        <div class="playlist-info">
+                                            <span class="playlist-title">Lo-Fi Beats</span>
+                                            <span class="playlist-subtitle">Focus Playlist</span>
+                                        </div>
+                                    </div>
+                                    <!-- Dynamic Wave Visualizer -->
+                                    <div class="wave-visualizer" id="wave-visualizer">
+                                        <div class="wave-bar"></div>
+                                        <div class="wave-bar"></div>
+                                        <div class="wave-bar"></div>
+                                        <div class="wave-bar"></div>
+                                        <div class="wave-bar"></div>
+                                        <div class="wave-bar"></div>
+                                        <div class="wave-bar"></div>
+                                        <div class="wave-bar"></div>
+                                    </div>
+                                    <div class="playlist-songs">
+                                        <div class="song-item active" data-track="0">
+                                            <span class="song-num">1</span>
+                                            <span class="song-title">Calm Lo-Fi</span>
+                                            <span class="song-duration">28:20</span>
+                                        </div>
+                                        <div class="song-item" data-track="1">
+                                            <span class="song-num">2</span>
+                                            <span class="song-title">Deep Focus</span>
+                                            <span class="song-duration">30:00</span>
+                                        </div>
+                                        <div class="song-item" data-track="2">
+                                            <span class="song-num">3</span>
+                                            <span class="song-title">Peaceful Mind</span>
+                                            <span class="song-duration">20:15</span>
+                                        </div>
+                                        <div class="song-item" data-track="3">
+                                            <span class="song-num">4</span>
+                                            <span class="song-title">Study Vibes</span>
+                                            <span class="song-duration">25:40</span>
+                                        </div>
+                                    </div>
+                                    <div class="player-controls-row">
+                                        <button class="player-btn prev">⏮️</button>
+                                        <button class="player-btn play-pause-music" id="btn-play-music">▶️</button>
+                                        <button class="player-btn next">⏭️</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Focus Ambience Synthesizer -->
+                            <div class="card focus-ambience-card">
+                                <h3>Focus Ambience</h3>
+                                <div class="ambience-tabs">
+                                    <button class="ambience-tab active" data-sound="rain">🌧️ Rain</button>
+                                    <button class="ambience-tab" data-sound="cafe">☕ Cafe</button>
+                                    <button class="ambience-tab" data-sound="nature">🌲 Nature</button>
+                                    <button class="ambience-tab" data-sound="night">🌌 Night</button>
+                                </div>
+                                <div class="ambience-display">
+                                    <div class="ambience-illustration">
+                                        <svg viewBox="0 0 100 100" class="ambience-dino"><use href="#dino-default"/></svg>
+                                        <div class="ambient-rain-effect" id="rain-layer"></div>
+                                    </div>
+                                    <div class="volume-slider-row">
+                                        <span>Vol:</span>
+                                        <input type="range" id="ambience-volume" min="0" max="100" value="50">
+                                        <button class="btn btn-icon-round" id="btn-toggle-ambience">▶️</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- 4. FRIENDS TAB PANEL -->
+                    <section id="panel-friends" class="tab-panel">
+                        <div class="friends-layout-grid">
+                            
+                            <!-- Left Column: Friends List & Leaderboard -->
+                            <div class="friends-list-panel">
+                                <div class="friends-panel-header">
+                                    <h3>Friends</h3>
+                                    <div class="friends-filter-tabs">
+                                        <button class="fr-tab active" data-fr-filter="all">All Friends</button>
+                                        <button class="fr-tab" data-fr-filter="buddies">Study Buddies</button>
+                                    </div>
+                                </div>
+                                <div class="friends-list-scrollable" id="friends-list-container">
+                                    <!-- Populated dynamically by app.js -->
+                                </div>
+                                <div class="friends-panel-footer">
+                                    <button class="btn btn-primary w-full" id="btn-add-friend-trigger">➕ Add Friend</button>
+                                </div>
+                            </div>
+
+                            <!-- Middle Column: Friend Profile & Co-Study Room -->
+                            <div class="friends-profile-co-study-panel">
+                                <!-- STATE A: View Friend Profile -->
+                                <div class="friend-profile-card active" id="friend-profile-pane">
+                                    <div class="friend-profile-header">
+                                        <div class="friend-avatar-wrap">
+                                            <svg viewBox="0 0 100 100" class="friend-profile-dino"><use href="#dino-pink"/></svg>
+                                        </div>
+                                        <div class="friend-profile-title">
+                                            <h2 id="fr-prof-name">Priya</h2>
+                                            <span class="friend-level-tag">Level 15</span>
+                                        </div>
+                                    </div>
+                                    <div class="friend-profile-body">
+                                        <div class="friend-stats-row">
+                                            <div class="fr-stat-box">
+                                                <span class="num" id="fr-prof-streak">12 days</span>
+                                                <span class="lbl">Study Streak</span>
+                                            </div>
+                                            <div class="fr-stat-box">
+                                                <span class="num" id="fr-prof-focus">18h 30m</span>
+                                                <span class="lbl">Focus Time</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="friend-achievements">
+                                            <h4>Achievements</h4>
+                                            <div class="ach-badges-grid">
+                                                <span class="badge-item active" title="Focus Master">🧠</span>
+                                                <span class="badge-item active" title="Early Bird">☀️</span>
+                                                <span class="badge-item active" title="Streak Hero">🏆</span>
+                                                <span class="badge-item active" title="Super Helper">🤝</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="friend-profile-footer">
+                                        <button class="btn btn-primary w-full" id="btn-send-message-mock">💬 Send Message</button>
+                                    </div>
+                                </div>
+
+                                <!-- STATE B: Study Together Room -->
+                                <div class="study-together-card" id="study-together-pane" style="display: none;">
+                                    <div class="study-header">
+                                        <h3>Study Together</h3>
+                                        <p>You and Priya are in a focus session together!</p>
+                                    </div>
+                                    <div class="study-split-view">
+                                        <div class="study-buddy-block">
+                                            <svg viewBox="0 0 100 100" class="study-dino self"><use href="#dino-default"/></svg>
+                                            <span class="label">You</span>
+                                        </div>
+                                        <div class="study-buddy-block">
+                                            <svg viewBox="0 0 100 100" class="study-dino partner"><use href="#dino-pink"/></svg>
+                                            <span class="label">Priya</span>
+                                        </div>
+                                    </div>
+                                    <div class="study-session-clock-wrapper">
+                                        <div class="timer-countdown-text large" id="study-together-clock">24:59</div>
+                                    </div>
+                                    <div class="study-footer">
+                                        <button class="btn btn-danger w-full" id="btn-end-co-study">End Session</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column: Activity Stream, Leaderboard, & Challenges -->
+                            <div class="friends-social-panel">
+                                <!-- Leaderboard Card -->
+                                <div class="card leaderboard-card">
+                                    <div class="card-header-row">
+                                        <h3>Leaderboard</h3>
+                                        <div class="leaderboard-tabs">
+                                            <button class="ld-tab active">This Week</button>
+                                            <button class="ld-tab">All Time</button>
+                                        </div>
+                                    </div>
+                                    <div class="leaderboard-list">
+                                        <div class="leader-item gold">
+                                            <span class="rank">1</span>
+                                            <span class="name">Priya</span>
+                                            <span class="xp">2,450 XP</span>
+                                        </div>
+                                        <div class="leader-item silver active">
+                                            <span class="rank">2</span>
+                                            <span class="name">You</span>
+                                            <span class="xp">2,120 XP</span>
+                                        </div>
+                                        <div class="leader-item bronze">
+                                            <span class="rank">3</span>
+                                            <span class="name">Rohan</span>
+                                            <span class="xp">1,950 XP</span>
+                                        </div>
+                                        <div class="leader-item">
+                                            <span class="rank">4</span>
+                                            <span class="name">Ananya</span>
+                                            <span class="xp">1,820 XP</span>
+                                        </div>
+                                        <div class="leader-item">
+                                            <span class="rank">5</span>
+                                            <span class="name">Arjun</span>
+                                            <span class="xp">1,200 XP</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Friend Activity Feed -->
+                                <div class="card friend-activity-card">
+                                    <h3>Friend Activity</h3>
+                                    <div class="activity-timeline">
+                                        <div class="act-item">
+                                            <span class="act-avatar">🦖</span>
+                                            <div class="act-details">
+                                                <p><strong>Priya</strong> is focusing</p>
+                                                <span class="act-time">1:25:30</span>
+                                            </div>
+                                        </div>
+                                        <div class="act-item">
+                                            <span class="act-avatar">🦕</span>
+                                            <div class="act-details">
+                                                <p><strong>Rohan</strong> completed "Math Homework"</p>
+                                                <span class="act-time">3h ago</span>
+                                            </div>
+                                        </div>
+                                        <div class="act-item">
+                                            <span class="act-avatar">🦖</span>
+                                            <div class="act-details">
+                                                <p><strong>Ananya</strong> earned "Focus Master"</p>
+                                                <span class="act-time">5h ago</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Friend Challenges Card -->
+                                <div class="card challenges-card">
+                                    <h3>Friend Challenges</h3>
+                                    <div class="challenge-item-box">
+                                        <div class="challenge-info">
+                                            <strong>7 Day Focus Challenge</strong>
+                                            <div class="progress-bar-small"><div class="progress-bar-fill" style="width: 71%"></div></div>
+                                            <span class="challenge-progress-text">5 / 7 Days</span>
+                                        </div>
+                                        <button class="btn btn-secondary-purple btn-small" id="btn-join-challenge-1">Join Challenge</button>
+                                    </div>
+                                    <div class="challenge-item-box">
+                                        <div class="challenge-info">
+                                            <strong>30 Day No Distraction</strong>
+                                            <div class="progress-bar-small"><div class="progress-bar-fill" style="width: 40%"></div></div>
+                                            <span class="challenge-progress-text">12 / 30 Days</span>
+                                        </div>
+                                        <span class="active-badge">Active</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- 5. SETTINGS TAB PANEL -->
+                    <section id="panel-settings" class="tab-panel">
+                        <div class="settings-grid">
+                            <!-- Profile Hero Card -->
+                            <div class="card profile-hero-card">
+                                <div class="profile-hero-content">
+                                    <div class="avatar-large-container">
+                                        <svg class="avatar-large-svg" viewBox="0 0 100 100">
+                                            <use href="#dino-default" id="hero-avatar-use" />
+                                        </svg>
+                                    </div>
+                                    <div class="profile-hero-info">
+                                        <h2 id="hero-user-name">Sawmiyaa</h2>
+                                        <p id="hero-user-email">sawmiyaa@example.com</p>
+                                        <p id="hero-user-dob"></p>
+                                        <span class="profile-level badge">Level 12 Dino Trainer</span>
+                                        <button class="btn btn-primary" id="btn-edit-profile">✏️ Edit Profile</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Floating Settings Cards -->
+                            <div class="settings-cards-container">
+                                <div class="card floating-setting-card" style="animation-delay: 0s;">
+                                    <div class="setting-card-icon">🔔</div>
+                                    <h3>Notifications & Preferences</h3>
+                                    <p>Control what alerts you get and your daily goals.</p>
+                                    <button class="btn btn-secondary-purple" id="btn-open-notifications">Manage</button>
+                                </div>
+                                <div class="card floating-setting-card" style="animation-delay: 0.2s;">
+                                    <div class="setting-card-icon">🔒</div>
+                                    <h3>Privacy & Security</h3>
+                                    <p>Manage who sees your progress and secure your data.</p>
+                                    <button class="btn btn-secondary-purple" id="btn-open-privacy">Manage</button>
+                                </div>
+                                <div class="card floating-setting-card" style="animation-delay: 0.4s;">
+                                    <div class="setting-card-icon">❓</div>
+                                    <h3>About & Help</h3>
+                                    <p>Need assistance or want to learn more?</p>
+                                    <button class="btn btn-secondary-purple">Manage</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </main>
+        </div>
+
+
+        <!-- MAIN LAYOUT 2: FIGMA BOARD LAYOUT -->
+        <!-- Shows the 4 flows side-by-side in grid format exactly like the screenshot for visual inspection! -->
+        <div id="figma-board-layout" class="layout-wrapper">
+            <div class="figma-board-scroll-container">
+                
+                <!-- COLUMN 1: HOME FLOW -->
+                <div class="figma-column">
+                    <div class="column-header-banner color-home">HOME FLOW</div>
+                    <div class="figma-board-preview-img-card">
+                        <!-- Simulated sidebar & dashboard snapshot -->
+                        <div class="mock-browser-chrome">
+                            <div class="circle red"></div><div class="circle yellow"></div><div class="circle green"></div>
+                            <span class="title-bar">Home Dashboard Mockup</span>
+                        </div>
+                        <div class="mock-content-body home-mock">
+                            <!-- Left Mini Sidebar -->
+                            <div class="mini-sidebar">
+                                <div class="item active">🏠</div><div class="item">📋</div><div class="item">⏱️</div>
+                                <div class="item">👥</div><div class="item">🌍</div><div class="item">📊</div>
+                            </div>
+                            <!-- Core Content -->
+                            <div class="mini-grid">
+                                <div class="m-card col-2 welcome">
+                                    <h4>Good morning, Sawmiyaa! 👋</h4>
+                                    <p>Let's make today amazing!</p>
+                                    <div class="dino-placeholder default-dino">🦖</div>
+                                </div>
+                                <div class="m-card list">
+                                    <h5>Today's Tasks 📋</h5>
+                                    <ul>
+                                        <li>✓ Finish Math Assignment</li>
+                                        <li>✓ Read 20 Pages</li>
+                                        <li>✓ Gym Workout</li>
+                                    </ul>
+                                </div>
+                                <div class="m-card buddy">
+                                    <h5>Buddy Activity 🦖</h5>
+                                    <div class="m-progress" style="width:60%"></div>
+                                </div>
+                                <div class="m-card streak">
+                                    <h5>Streak 🔥 7 Days</h5>
+                                    <div class="streak-dots">⬤ ⬤ ⬤ ⬤ ⬤ ⬤ ◯</div>
+                                </div>
+                                <div class="m-card world">
+                                    <h5>Your World 🌍</h5>
+                                    <div class="world-art-mini">🌲🏰🌳☁️</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMN 2: TASKS FLOW -->
+                <div class="figma-column">
+                    <div class="column-header-banner color-tasks">TASKS FLOW</div>
+                    <div class="figma-card-carousel-vertical">
+                        <!-- Card 1: All Tasks List -->
+                        <div class="m-card figma-sub-card">
+                            <div class="sub-card-header">📋 All Tasks</div>
+                            <ul class="task-list-mock">
+                                <li>⬜ Finish Math Assignment <span class="prio high">High</span></li>
+                                <li>⬜ Read 20 Pages <span class="prio med">Med</span></li>
+                                <li>⬜ Gym Workout <span class="prio med">Med</span></li>
+                                <li>⬜ Call Mom <span class="prio low">Low</span></li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Card 2: Task Details -->
+                        <div class="m-card figma-sub-card">
+                            <div class="sub-card-header">📋 Task Details</div>
+                            <h4>Finish Math Assignment</h4>
+                            <p class="desc">Complete all problems from chapter 5. Don't forget to check examples.</p>
+                            <ul>
+                                <li>⬜ Solve equations</li>
+                                <li>⬜ Graph questions</li>
+                            </ul>
+                            <div class="buttons-mock">
+                                <button class="btn btn-mock">Edit Task</button>
+                                <button class="btn btn-mock active">Mark Done</button>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Task in Action -->
+                        <div class="m-card figma-sub-card text-center">
+                            <div class="sub-card-header">⚙️ Task in Action</div>
+                            <div class="wooden-sign-mock">IN PROGRESS</div>
+                            <div class="dino-placeholder worker-dino">👷‍♂️🦖</div>
+                            <p>Buddy is working on it!</p>
+                        </div>
+
+                        <!-- Card 4: Completed -->
+                        <div class="m-card figma-sub-card text-center">
+                            <div class="sub-card-header">🎉 Completed!</div>
+                            <div class="celebration-trophy">🏆</div>
+                            <p>Great job! Task completed.</p>
+                            <p class="rewards">+20 XP | +1 Energy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMN 3: FOCUS FLOW -->
+                <div class="figma-column">
+                    <div class="column-header-banner color-focus">FOCUS FLOW</div>
+                    <div class="figma-card-carousel-vertical">
+                        <!-- Card 1: Setup Mode -->
+                        <div class="m-card figma-sub-card">
+                            <div class="sub-card-header">⏱️ Choose Duration</div>
+                            <div class="duration-grid-mock">
+                                <span>25 min</span><span>50 min</span><span>75 min</span><span>Custom</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Focus Session -->
+                        <div class="m-card figma-sub-card text-center">
+                            <div class="sub-card-header">⏱️ Focus Session</div>
+                            <div class="clock-display-mock">24:59</div>
+                            <p>Focus on your goal. You can do it!</p>
+                            <div class="dino-placeholder study-dino">💻🦖</div>
+                        </div>
+
+                        <!-- Card 3: Break Time -->
+                        <div class="m-card figma-sub-card text-center">
+                            <div class="sub-card-header">☕ Break Time!</div>
+                            <div class="clock-display-mock">04:59</div>
+                            <p>Take a short break, you deserve it!</p>
+                            <div class="dino-placeholder dance-dino">🕺🦖</div>
+                        </div>
+
+                        <!-- Card 4: Distractions Blocked -->
+                        <div class="m-card figma-sub-card">
+                            <div class="sub-card-header">🛡️ Distractions Blocked</div>
+                            <p>You stayed strong!</p>
+                            <ul class="block-list-mock">
+                                <li>Instagram: 12</li>
+                                <li>YouTube: 7</li>
+                                <li>Twitter: 3</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMN 4: FRIENDS FLOW -->
+                <div class="figma-column">
+                    <div class="column-header-banner color-friends">FRIENDS FLOW</div>
+                    <div class="figma-card-carousel-vertical">
+                        <!-- Card 1: Friends List -->
+                        <div class="m-card figma-sub-card">
+                            <div class="sub-card-header">👥 Friends List</div>
+                            <ul class="friends-list-mock">
+                                <li>🟢 Priya (Level 15) <span class="status">Online</span></li>
+                                <li>🟠 Rohan (Level 12) <span class="status">Focusing</span></li>
+                                <li>🟢 Ananya (Level 8) <span class="status">Online</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Card 2: Study Together -->
+                        <div class="m-card figma-sub-card text-center">
+                            <div class="sub-card-header">🤝 Study Together</div>
+                            <div class="study-split-mock">
+                                <span>You 🦖</span>
+                                <span class="vs-divider">&</span>
+                                <span>Priya 🦕</span>
+                            </div>
+                            <div class="clock-display-mock">24:59</div>
+                            <p>Focusing together!</p>
+                        </div>
+
+                        <!-- Card 3: Leaderboard -->
+                        <div class="m-card figma-sub-card">
+                            <div class="sub-card-header">🏆 Leaderboard</div>
+                            <ul class="leaderboard-mock">
+                                <li>1. Priya - 2,450 XP</li>
+                                <li>2. You - 2,120 XP</li>
+                                <li>3. Rohan - 1,950 XP</li>
+                            </ul>
+                        </div>
+
+                        <!-- Card 4: Buddy Visit -->
+                        <div class="m-card figma-sub-card">
+                            <div class="sub-card-header">💌 Buddy Visit</div>
+                            <p>Priya's buddy visited your world!</p>
+                            <div class="letter-note">"They left you this note: Keep going superstar!"</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODALS & POP-UPS -->
+    <!-- Edit Profile Modal -->
+    <div class="modal-backdrop" id="modal-edit-profile">
+        <div class="modal-content card">
+            <div class="modal-header">
+                <h3>Edit Profile</h3>
+                <button class="btn-close-modal" id="btn-close-edit-profile">✕</button>
+            </div>
+            <div class="modal-body" style="max-height: 60vh; overflow-y: auto; padding-right: 10px;">
+                <div class="form-group avatar-selector">
+                    <label>Choose Avatar</label>
+                    <div class="avatar-options">
+                        <div class="avatar-option selected" data-avatar="dino-default">
+                            <svg viewBox="0 0 100 100"><use href="#dino-default"/></svg>
+                        </div>
+                        <div class="avatar-option" data-avatar="dino-blue">
+                            <svg viewBox="0 0 100 100"><use href="#dino-blue"/></svg>
+                        </div>
+                        <div class="avatar-option" data-avatar="dino-pink-bow">
+                            <svg viewBox="0 0 100 100"><use href="#dino-pink-bow"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label for="edit-profile-fullname">Full Name</label>
+                        <input type="text" id="edit-profile-fullname" class="cute-input" placeholder="e.g. Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-profile-name">Username</label>
+                        <input type="text" id="edit-profile-name" class="cute-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="edit-profile-email">Email ID</label>
+                        <input type="email" id="edit-profile-email" class="cute-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-profile-phone">Phone Number</label>
+                        <input type="tel" id="edit-profile-phone" class="cute-input" placeholder="+1 234 567 8900">
+                    </div>
+
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label for="edit-profile-bio">Bio</label>
+                        <textarea id="edit-profile-bio" class="cute-input" rows="2" placeholder="Tell us about yourself..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-profile-occupation">Occupation</label>
+                        <input type="text" id="edit-profile-occupation" class="cute-input" placeholder="e.g. Developer">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-profile-location">Location</label>
+                        <input type="text" id="edit-profile-location" class="cute-input" placeholder="City, Country">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-profile-preflang">Preferred Language</label>
+                        <input type="text" id="edit-profile-preflang" class="cute-input" placeholder="e.g. English">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-profile-spokenlang">Spoken Language</label>
+                        <input type="text" id="edit-profile-spokenlang" class="cute-input" placeholder="e.g. Spanish, French">
+                    </div>
+
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label for="edit-profile-dob">Date of Birth</label>
+                        <input type="date" id="edit-profile-dob" class="cute-input">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary-gray" id="btn-cancel-edit-profile">Cancel</button>
+                <button class="btn btn-primary" id="btn-save-profile">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifications & Preferences Modal -->
+    <div class="modal-backdrop" id="modal-notifications">
+        <div class="modal-content card" style="max-width: 500px;">
+            <div class="modal-header">
+                <h3>🔔 Notifications & Preferences</h3>
+                <button class="btn-close-modal" id="btn-close-notifications">✕</button>
+            </div>
+            <div class="modal-body" style="max-height: 60vh; overflow-y: auto;">
+                <div class="settings-list">
+                    <!-- Task Reminders -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <h4>Task Reminders</h4>
+                            <p>Get notified when a task is due soon.</p>
+                        </div>
+                        <label class="cute-toggle">
+                            <input type="checkbox" id="pref-task-reminders">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Daily Digest -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <h4>Daily Morning Digest</h4>
+                            <p>Receive an email summary of your tasks at 8:00 AM.</p>
+                        </div>
+                        <label class="cute-toggle">
+                            <input type="checkbox" id="pref-daily-digest">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Focus Timer Alerts -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <h4>Focus Timer Alerts</h4>
+                            <p>Play a sound and notify when your Pomodoro finishes.</p>
+                        </div>
+                        <label class="cute-toggle">
+                            <input type="checkbox" id="pref-focus-alerts">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Sound Effects -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <h4>App Sound Effects</h4>
+                            <p>Play cute sounds when checking off tasks.</p>
+                        </div>
+                        <label class="cute-toggle">
+                            <input type="checkbox" id="pref-sounds">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Mascot Animations -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <h4>Mascot Animations</h4>
+                            <p>Enable fun dinosaur animations around the app.</p>
+                        </div>
+                        <label class="cute-toggle">
+                            <input type="checkbox" id="pref-animations">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Friend Task Completions -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <h4>Friend Progress</h4>
+                            <p>Get notified when a friend completes a task.</p>
+                        </div>
+                        <label class="cute-toggle">
+                            <input type="checkbox" id="pref-friend-tasks">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Friend Focus Mode -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <h4>Focus Mode Alerts</h4>
+                            <p>Know when a friend starts a deep work session.</p>
+                        </div>
+                        <label class="cute-toggle">
+                            <input type="checkbox" id="pref-friend-focus">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Study Buddy Invites -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <h4>Study Buddy Invites</h4>
+                            <p>Get notified when someone wants to study together.</p>
+                        </div>
+                        <label class="cute-toggle">
+                            <input type="checkbox" id="pref-friend-study">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="btn-save-notifications" style="width: 100%;">Save Preferences</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy & Security Modal -->
+    <div class="modal-backdrop" id="modal-privacy">
+        <div class="modal-content card" style="max-width: 500px;">
+            <div class="modal-header">
+                <h3>🔒 Privacy & Security</h3>
+                <button class="btn-close-modal" id="btn-close-privacy">✕</button>
+            </div>
+            <div class="modal-body" style="max-height: 60vh; overflow-y: auto;">
+                <div class="settings-list">
+                    <!-- Make Profile Public -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <h4>Public Profile</h4>
+                            <p>Allow others to find you by username.</p>
+                        </div>
+                        <label class="cute-toggle">
+                            <input type="checkbox" id="pref-public-profile">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Show Online Status -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <h4>Show Online Status</h4>
+                            <p>Let friends see when you're active.</p>
+                        </div>
+                        <label class="cute-toggle">
+                            <input type="checkbox" id="pref-online-status">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Share Activity Log -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <h4>Share Activity</h4>
+                            <p>Publish your completed tasks to your friends.</p>
+                        </div>
+                        <label class="cute-toggle">
+                            <input type="checkbox" id="pref-share-activity">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Block Friend Requests -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <h4>Block Friend Requests</h4>
+                            <p>Stop receiving new friend requests.</p>
+                        </div>
+                        <label class="cute-toggle">
+                            <input type="checkbox" id="pref-block-requests">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Two-Factor Authentication -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <h4>Two-Factor Authentication</h4>
+                            <p>Require an extra code to log in.</p>
+                        </div>
+                        <label class="cute-toggle">
+                            <input type="checkbox" id="pref-2fa">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <!-- Incognito Mode -->
+                    <div class="settings-row">
+                        <div class="settings-info">
+                            <h4>Incognito Mode</h4>
+                            <p>Hide all activity and appear offline.</p>
+                        </div>
+                        <label class="cute-toggle">
+                            <input type="checkbox" id="pref-incognito">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+
+                    <hr style="border: 1px solid #E2E8F0; margin: 10px 0;">
+
+                    <!-- Data Management Buttons -->
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <button class="btn btn-outline" id="btn-export-data">📥 Export My Data</button>
+                        <button class="btn btn-danger" id="btn-delete-account">🗑️ Delete Account</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="btn-save-privacy" style="width: 100%;">Save Privacy Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 1. Add Task Modal -->
+    <div class="modal-backdrop" id="modal-add-task">
+        <div class="modal-content card">
+            <div class="modal-header">
+                <h3>Add Task</h3>
+                <button class="btn-close-modal" id="btn-close-add-task">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="task-title-input">What task do you want to add?</label>
+                    <input type="text" id="task-title-input" placeholder="e.g. Study for exam tomorrow 5pm" required>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="task-date-input">Date</label>
+                        <select id="task-date-input">
+                            <option value="Today">Today</option>
+                            <option value="Tomorrow">Tomorrow</option>
+                            <option value="Upcoming">Upcoming</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-time-input">Time</label>
+                        <input type="time" id="task-time-input" value="12:00">
+                    </div>
+                    <div class="form-group">
+                        <label for="task-priority-input">Priority</label>
+                        <select id="task-priority-input">
+                            <option value="High">High</option>
+                            <option value="Medium" selected>Medium</option>
+                            <option value="Low">Low</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-category-input">Category</label>
+                        <select id="task-category-input">
+                            <option value="Study" selected>Study</option>
+                            <option value="Work">Work</option>
+                            <option value="Health">Health</option>
+                            <option value="Personal">Personal</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="task-reminder-input">Remind me</label>
+                    <select id="task-reminder-input">
+                        <option value="15 mins before" selected>15 mins before</option>
+                        <option value="30 mins before">30 mins before</option>
+                        <option value="1 hour before">1 hour before</option>
+                        <option value="None">None</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="task-subtasks-input">Subtasks (one per line, optional)</label>
+                    <textarea id="task-subtasks-input" rows="3" placeholder="Subtask 1&#10;Subtask 2"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary-purple" id="btn-cancel-add-task">Cancel</button>
+                <button class="btn btn-primary" id="btn-submit-add-task">Add Task</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Distractions Blocked Summary Modal -->
+    <div class="modal-backdrop" id="modal-distractions-blocked">
+        <div class="modal-content card text-center">
+            <div class="modal-header">
+                <h3>Distractions Blocked</h3>
+                <button class="btn-close-modal" id="btn-close-distractions">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="distraction-shield-wrapper">
+                    <svg viewBox="0 0 100 100" class="cool-shield-dino animate-bounce"><use href="#dino-cool"/></svg>
+                </div>
+                <h2>You stayed strong! 💪</h2>
+                <p>Distractions blocked during your focus session:</p>
+                <div class="blocked-apps-list">
+                    <div class="blocked-app-item">
+                        <span>📸 Instagram</span>
+                        <span class="count-badge red">12 blocked</span>
+                    </div>
+                    <div class="blocked-app-item">
+                        <span>🎥 YouTube</span>
+                        <span class="count-badge red">7 blocked</span>
+                    </div>
+                    <div class="blocked-app-item">
+                        <span>🐦 Twitter</span>
+                        <span class="count-badge red">3 blocked</span>
+                    </div>
+                    <div class="blocked-app-item">
+                        <span>💬 Other Apps</span>
+                        <span class="count-badge red">5 blocked</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary w-full" id="btn-distractions-ack">Great Work! 👍</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Buddy Visit Popup Modal -->
+    <div class="modal-backdrop" id="modal-buddy-visit">
+        <div class="modal-content card text-center">
+            <div class="modal-header">
+                <h3>Buddy Visit! 💌</h3>
+                <button class="btn-close-modal" id="btn-close-visit">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="visit-avatar-wrap">
+                    <svg viewBox="0 0 100 100" class="pink-visit-dino"><use href="#dino-pink"/></svg>
+                </div>
+                <h2>Priya's buddy visited your world!</h2>
+                <p>They left you this note:</p>
+                <div class="visit-note-paper">
+                    <blockquote>"Keep going superstar! You're doing amazing! ✨🦖"</blockquote>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary w-full" id="btn-visit-ack">Thanks Priya! 💖</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
